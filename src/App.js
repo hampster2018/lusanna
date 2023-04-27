@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'
 import { Configuration, OpenAIApi } from 'openai';
-import './.env'
 import text from './prompt.js';
 
 function App() {
