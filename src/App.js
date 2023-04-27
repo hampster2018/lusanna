@@ -38,7 +38,11 @@ function App() {
           role: 'user',
           content: body
         }
-      ]
+      ],
+      max_tokens: 30,
+      top_p: .75,
+      presence_penalty: 1,
+      frequency_penalty: 2,
     })
 
     setPerson(false)
@@ -66,10 +70,12 @@ function App() {
     else {
       bool = !bool
       return (
+        <div className='moveLeft'>
         <div className='talk-bubble tri-right round border right-top' id={chat}>
           <div className='talktext'>
             <p>{chat}</p>
           </div>
+        </div>
         </div>
       )
     }
@@ -78,6 +84,7 @@ function App() {
 
   return (
     <div className='container'>
+      <h1>Chat With Lusanna</h1>
       <div className='listContainer'>
         {list}
       </div>
