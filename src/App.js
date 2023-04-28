@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import './App.css'
 import { Configuration, OpenAIApi } from 'openai';
-import text from './prompt.js';
+import text from './prompt.txt';
+
+let prompt = "";
+
+fetch(text)
+ .then(r => r.text())
+ .then(text => {
+  prompt = text
+  console.log('text decoded:', prompt);
+});
 
 function App() {
 
@@ -32,7 +41,7 @@ function App() {
       'messages': [
         {
           role: 'system',
-          content: text
+          content: prompt
         },
         {
           role: 'user',

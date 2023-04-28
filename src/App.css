@@ -19,7 +19,7 @@
 }
 
 .talk-bubble {
-	margin: 40px;
+	margin: 10px;
 	display: inline-block;
 	position: relative;
 	width: 400px;
@@ -27,7 +27,7 @@
 	background-color: lightyellow;
 }
 .moveLeft {
-	padding-left: 50%;
+	padding-left: 60%;
 }
 
 .tri-right.border.left-top:before {
@@ -96,6 +96,7 @@
 }
 
 .talktext {
+	font-size: medium;
 	padding: 1em;
 	text-align: left;
 	line-height: 1em;
@@ -104,4 +105,11 @@
 .talktext p {
 	-webkit-margin-before: 0em;
 	-webkit-margin-after: 0em;
+}
+
+input {
+    width: 400px;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: medium;
 }
