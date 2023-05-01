@@ -16,11 +16,9 @@ function App() {
 
   const [message, setMessage] = useState([''])
   const [chats, setChats] = useState([]); 
-  const [person, setPerson] = useState(false);
 
   async function getResponse() {
     
-    setPerson(true);
     let body = message
     setMessage('')
     setChats([...chats, message])
@@ -53,7 +51,6 @@ function App() {
       frequency_penalty: 2,
     })
 
-    setPerson(false)
     console.log(chats)
     setChats([...temp, completion.data.choices[0].message.content])
     console.log(chats)
@@ -69,7 +66,7 @@ function App() {
     }
   };
 
-  let bool = person
+  let bool = false
   let list = chats.map((chat, index) => {
     if (!bool) {
       bool = !bool
@@ -98,7 +95,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h1>Chat With Lusanna</h1>
+      <h1>Chat with Lusanna</h1>
       <div className='listContainer'>
         {list}
       </div>
