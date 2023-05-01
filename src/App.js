@@ -64,6 +64,12 @@ function App() {
     setMessage(event.target.value);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      getResponse()
+    }
+  };
+
   let bool = person
   let list = chats.map((chat, index) => {
     if (!bool) {
@@ -101,6 +107,7 @@ function App() {
       <input 
         placeholder='Insert Chat here' 
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
         value={message}
       />
 
