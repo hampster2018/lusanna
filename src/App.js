@@ -48,7 +48,6 @@ function App() {
           content: body
         }
       ],
-      max_tokens: 30,
       top_p: .75,
       presence_penalty: 1,
       frequency_penalty: 2,
